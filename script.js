@@ -129,3 +129,45 @@ function updateNavbar() {
 
 // Add event listener for scroll event
 window.addEventListener('scroll', updateNavbar);
+//touch disable function
+function disableTouch() {
+    document.querySelector('body').style.pointerEvents = 'auto';
+}
+
+// Function to enable touch interactions
+function enableTouch() {
+    document.querySelector('body').style.pointerEvents = 'none';
+}
+
+// Call disableTouch function when the loading screen starts
+disableTouch();
+
+// Call enableTouch function when the loading is complete
+//setTimeout(enableTouch, 5000); // Adjust the time according to loading process
+
+const textElement = document.querySelector('.calculating-text');
+const text = "Calculating.";
+let index = 0;
+
+function typeWriter() {
+    if (index < text.length) {
+        textElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100); // Adjust typing speed here
+    }
+}
+
+// Call typeWriter function
+typeWriter();
+
+// Anime.js animation to slide the loading screen to the top
+anime({
+    targets: '.container',
+    opacity: 0,
+    duration: 7000, // Adjust duration as needed
+    easing: 'easeInOutQuad', // Adjust easing as needed
+    complete: function() {
+        document.querySelector('.container').style.display = 'none';
+        enableTouch();
+    }
+});
