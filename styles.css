@@ -16,6 +16,95 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+/*exp article styling*/
+.articles-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.art-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.art-card {
+    width: 300px;
+    height: 400px;
+    margin-right: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+
+.art-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.art-card .content {
+    padding: 20px;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+.full-screen {
+    position: fixed;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.full-screen .art-card {
+    width: 80%;
+    height: auto;
+margin: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);}
+
+.full-screen .art-card .content {
+    padding: 20px;
+}
+
+/*end*/
+
 /*exp loading screen*/
 .container {
     display: flex;
@@ -203,6 +292,7 @@ ul .content {
   border-radius: 0.25rem;
   padding: 0.75rem;
   cursor: pointer;
+margin: 0 auto;
 }
 
 .item:nth-of-type(2) .content {

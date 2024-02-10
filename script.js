@@ -140,13 +140,13 @@ function enableTouch() {
 }
 
 // Call disableTouch function when the loading screen starts
-disableTouch();
+//disableTouch();
 
 // Call enableTouch function when the loading is complete
 //setTimeout(enableTouch, 5000); // Adjust the time according to loading process
 
 const textElement = document.querySelector('.calculating-text');
-const text = "Calculating.";
+const text = "Calculating.  dx";
 let index = 0;
 
 function typeWriter() {
@@ -168,6 +168,83 @@ anime({
     easing: 'easeInOutQuad', // Adjust easing as needed
     complete: function() {
         document.querySelector('.container').style.display = 'none';
-        enableTouch();
+  //      enableTouch();
+    }
+});
+
+
+//article logic
+const Artslider = document.querySelector('.art-slider');
+const dotsContainer = document.querySelector('.dots-container');
+const cards = document.querySelectorAll('.art-card');
+
+let index2 = 0;
+
+function updateSlider() {
+    Artslider.style.transform = `translateX(${-index2 * 320}px)`; // Adjust card width plus margin
+}
+
+function updateDots() {
+    dotsContainer.innerHTML = '';
+    cards.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === index2) {
+            dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => {
+            index2 = i;
+            updateSlider();
+            updateDots();
+        });
+        dotsContainer.appendChild(dot);
+    });
+}
+
+updateDots();
+
+// JavaScript for full screen article view
+const readMoreBtns = document.querySelectorAll('.read-more-btn');
+const articleCards = document.querySelectorAll('.art-card');
+
+readMoreBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.style.display = "none";
+        const card = btn.closest('.art-card');
+        card.classList.add('full-screen');
+        
+        // Remove fullscreen attribute from other cards
+        articleCards.forEach(article => {
+            if (article !== card) {
+                article.classList.remove('full-screen');
+            }
+        });
+
+        // Create and append close button
+        const closeButton = document.createElement('button');
+        closeButton.innerHTML = '<i class="fas fa-times"></i>'; // Example close icon, you can replace it with your own icon
+        closeButton.classList.add('close-btn');
+        card.appendChild(closeButton);
+
+        // Add event listener to close button
+        closeButton.addEventListener('click', () => {
+            card.classList.remove('full-screen');
+            btn.style.display = "block";
+            closeButton.remove(); // Remove the close button
+        });
+    });
+});
+
+document.addEventListener('click', event => {
+    const isInsideArticle = event.target.closest('.art-card');
+    if (!isInsideArticle) {
+        articleCards.forEach(card => {
+            card.classList.remove('full-screen');
+        });
+        readMoreBtns.forEach(btn => {
+            btn.style.display = "block";
+        });
+        const closeButtons = document.querySelectorAll('.close-btn');
+        closeButtons.forEach(button => button.remove());
     }
 });
