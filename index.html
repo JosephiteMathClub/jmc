@@ -162,20 +162,20 @@ header .overlay{
         <!-- Add content for the gallery section -->
 <main>
   <ul class='slider'>
-    <li class='item' style="background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')">
+    <li class='item' style="background-image: url('gallery/one.jpg')">
     
     </li>
-    <li class='item' style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')">
+    <li class='item' style="background-image: url('gallery/two.jpg')">
   
     </li>
-    <li class='item' style="background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')">
+    <li class='item' style="background-image: url('gallery/three.jpg')">
      
     </li>
-    <li class='item' style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')">
+    <li class='item' style="background-image: url('gallery/four.jpg')">
      </li>
-    <li class='item' style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')">
+    <li class='item' style="background-image: url('gallery/five.jpg')">
     </li>
-    <li class='item' style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')">
+    <li class='item' style="background-image: url('gallery/six.jpg')">
     </li>
   </ul>
   <nav class='nav'>
@@ -187,8 +187,8 @@ header .overlay{
 
     </section>
     <!--articles-->
-<section class="articles-section">
-    <h2>Articles</h2>
+<section class="articles-section" id="articles">
+    <h2 class="section-title">Articles</h2>
     <div class="slider-container">
         <div class="art-slider">
             <div class="art-card">
@@ -280,16 +280,90 @@ header .overlay{
 </div>
 <!--pop up end-->
     <!-- Footer -->
-   <footer>
-    <div>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-    <div>
-        © 2024 Josephite Math Club. All rights reserved.
-    </div>
-</footer>
+  <footer>
+       <div>
+            <span class="logo">Josephite Math Club</span>
+       </div>
+
+       <div class="row">
+            <div class="col-3">                
+                <div class="link-cat" onclick="footerToggle(this)">
+                    <span class="footer-toggle"></span>
+                    <span class="footer-cat">About</span>
+                </div>
+                <ul class="footer-cat-links">
+                    <li><a href="executive.html"><span>Executive Members</span></a></li>
+                    <li><a href=""><span>Club motto</span></a></li>
+                    <li><a href=""><span>Club History</span></a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <div class="link-cat" onclick="footerToggle(this)">
+                    <span class="footer-toggle"></span>
+                    <span class="footer-cat">Resources</span>
+                </div>
+                <ul class="footer-cat-links">
+                    <li><a href="#gallery"><span>Gallery</span></a></li>
+                    <li><a href=""><span>Magazine Draft</span></a></li>
+                    <li><a href=""><span>Math problems</span></a></li>
+                    <li><a href=""><span>Mock tests</span></a></li>
+                    <li><a href=""><span>Club activities</span></a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <div class="link-cat" onclick="footerToggle(this)">
+                    <span class="footer-toggle"></span>
+                    <span class="footer-cat">Quick Links</span>
+                </div>
+                <ul class="footer-cat-links">
+                    <li><a href="#home"><span>Home</span></a></li>
+                    <li><a href="#events"><span>Events</span></a></li>
+                    <li><a href="#articles"><span>Articles</span></a></li>
+                    <li><a href="#contact"><span>Contact</span></a></li>
+                </ul>
+            </div>
+            <div class="col-3" id="newsletter">
+                <span>Stay Connected</span>
+                <form id="subscribe">
+                    <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                    <input type="submit" value="Subscribe" id="btn-scribe"/>
+                </form>
+                
+                <div class="social-links social-2">
+                    <a href="https://www.facebook.com/2015JMC/photos"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <div id="address">
+                    <span>Club Location</span>
+                    <ul>
+                        <li>
+                            <i class="far fa-building"></i>
+                            <div>97 Asad Avenue<br/>
+                            Mohammadpur, Dhaka-1207</div>
+                        </li>
+                      
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="social-links social-1 col-6">
+                <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+            </div>
+       </div>
+       <div id="copyright">
+           &copy; All Rights Reserved 2024
+       </div>
+       <div id="owner">
+           <span>
+               Designed by JMC
+           </span>
+       </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="anime.min.js"></script>
 
     <script src="script.js"></script>

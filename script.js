@@ -248,3 +248,8 @@ document.addEventListener('click', event => {
         closeButtons.forEach(button => button.remove());
     }
 });
+
+function footerToggle(footerBtn) {
+    $(footerBtn).toggleClass("btnActive");
+    $(footerBtn).next().toggleClass("active");
+}
