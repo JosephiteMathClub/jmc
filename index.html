@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Josephite Math Club</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,84 +48,22 @@
 
 
     <!-- Home Section -->
-    <header>
-        <div class="overlay">
+<header>
     <section id="home" class="section">
-<!--Hero sec-->
-<h2 id="high">Josephite Math Club</h2>
-
-        <!-- Add content for the home section -->
+        <!--Hero sec-->
+        <div class="containerr">
+            <div class="image-container left">
+                <img src="sjs-logo.png" alt="Left Image" class="responsive-image">
+            </div>
+            <h2 id="high">Josephite Math Club</h2>
+            <div class="image-container right">
+                <img src="jmc.jpg" alt="Right Image" class="responsive-image">
+            </div>
+        </div>
     </section>
-</div>
-<style>
-    header {
- background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mathstimes.com%2Fwp-content%2Fuploads%2F2014%2F11%2Fmathtimes.jpg&f=1&nofb=1&ipt=33b7b0538e07ac2865abf034305cb7139e4e058e8e0cf22184e8f576d3c0b8a2&ipo=images');
-    height: 900px;
-    text-align: center;
-    width: 100%;
-    height: auto;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0 0 141% 79% / 32%;
-}
-
-header .overlay{
-    width: 100%;
-    height: 200vh;
-    padding: 50px;
-    color: #FFF;
-    text-shadow: 1px 1px 1px #333;
-    background-image: linear-gradient( 135deg, #1c052b69 10%, #3e107b6b 100%);
-    
-}
-/* About Section */
-#about {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.about-card {
-    max-width: 600px; /* Set maximum width for the card */
-    margin: 0 auto; /* Center the card horizontally */
-    padding: 40px;
-    border-radius: 20px; /* Add rounded corners */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-     backdrop-filter: blur(23px) saturate(209%);
-    -webkit-backdrop-filter: blur(23px) saturate(209%);
-    background-color: rgb(25 25 28 / 78%);
-    border: 1px solid rgba(255, 255, 255, 0.125);
-
-}
-
-.about-card h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.about-card p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.read-more-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #02AAB0;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.read-more-btn:hover {
-    background-color: #00CDAC;
-}
-
-    </style>
 </header>
+
+
     <!-- About Section -->
     <section id="about" class="section glass-section">
         
@@ -156,7 +96,7 @@ header .overlay{
     </section>
 
     <!-- Gallery Section -->      
-      <h2 class="section-title">Gallery</h2>
+      <h2 class="section-title" style="padding-bottom: 14vh;">Gallery</h2>
 
     <section id="gallery" class="section glass-section">
         <!-- Add content for the gallery section -->
@@ -186,8 +126,12 @@ header .overlay{
 
 
     </section>
+    <br>
+    <br>
+    <br>
     <!--articles-->
-<section class="articles-section" id="articles">
+
+<!--<section class="articles-section" id="articles">
     <h2 class="section-title">Articles</h2>
     <div class="slider-container">
         <div class="art-slider">
@@ -199,7 +143,7 @@ header .overlay{
                     <button class="read-more-btn">Read More</button>
                 </div>
             </div>
-            <!---->
+            
             <div class="art-card">
                  <div class="content">
                     <h3>Article 1</h3>
@@ -207,7 +151,7 @@ header .overlay{
                     <button class="read-more-btn">Read More</button>
                 </div>
             </div>
-            <!-- More cards -->
+        
             <div class="art-card">
                   <div class="content">
                     <h3>Article 1</h3>
@@ -219,7 +163,7 @@ header .overlay{
         <div class="dots-container"></div>
     </div>
 </section>
-
+-->
     <!-- Contact Section -->
     <section id="contact" class="section glass-section">
         <h2 class="section-title">Contact</h2>
@@ -250,19 +194,19 @@ header .overlay{
  <div class="login-box">
         <h2>Message Us</h2>
         <div class="input-box">
-            <input type="text" required>
+            <input type="text" id="name" required>
             <label>Name</label>
         </div>
         <div class="input-box">
-            <input type="email" required>
+            <input type="email" id="email" required>
             <label>Email</label>
         </div>
    <div class="input-box">
-            <input type="number" required>
+            <input type="number" id="phone" required>
             <label>Phone Number</label>
         </div>
    <div class="input-box">
-            <input type="textarea" required>
+            <input type="textarea" id="message"required>
             <label>Your Message</label>
         </div>
 <button class="submit-btn"  onclick="startSpinner()">Send</button>
@@ -362,6 +306,117 @@ header .overlay{
        </div>
     </footer>
 
+
+<style>
+    header {
+ background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mathstimes.com%2Fwp-content%2Fuploads%2F2014%2F11%2Fmathtimes.jpg&f=1&nofb=1&ipt=33b7b0538e07ac2865abf034305cb7139e4e058e8e0cf22184e8f576d3c0b8a2&ipo=images');
+    height: 900px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 141% 79% / 32%;
+}
+
+header .overlay{
+    width: 100%;
+    height: 200vh;
+    padding: 50px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient( 135deg, #1c052b69 10%, #3e107b6b 100%);
+    
+}
+/* About Section */
+#about {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-card {
+    max-width: 600px; /* Set maximum width for the card */
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 40px;
+    border-radius: 20px; /* Add rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+     backdrop-filter: blur(23px) saturate(209%);
+    -webkit-backdrop-filter: blur(23px) saturate(209%);
+    background-color: rgb(25 25 28 / 78%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+}
+
+.about-card h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #02AAB0;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #00CDAC;
+}
+
+.containerr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    text-align: center;
+}
+
+.image-container {
+    flex: 1;
+    padding: 10px; /* Adjust as needed */
+}
+
+.left {
+    text-align: right;
+    padding-right: 5px; /* Adjust as needed */
+}
+
+.right {
+    text-align: left;
+    padding-left: 5px; /* Adjust as needed */
+}
+
+.responsive-image {
+    max-width: 100px; /* Adjust as needed */
+    width: 100%;
+    height: auto;
+    border-radius: 100px;
+}
+
+@media (max-width: 768px) {
+    .responsive-image {
+        max-width: 70px; /* Adjust as needed */
+        min-width: 70px;
+    }
+}
+
+    </style>
+<script>
+  
+</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script src="anime.min.js"></script>
@@ -369,6 +424,7 @@ header .overlay{
     <script src="script.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>

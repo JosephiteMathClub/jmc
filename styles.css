@@ -328,7 +328,7 @@ footer {
     .social-2 {
         display: block;
         position: absolute;
-        top: 7.5em;
+        top: 8.5em;
         bottom: 0px;
         height:20px;
         padding-bottom: 1.5em;
@@ -627,21 +627,25 @@ margin: 20px;
 
 /**/
 .item {
-      width: 23vw;
-    height: 46vh;
-  max-height: 200px;
+  width: 176px;
+  height: 22vh;
+  max-height: 213px;
   list-style-type: none;
   position: absolute;
-  top: 90%;
+top: 59vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+  background-size: contain;
+  background-repeat: no-repeat; /* Add this line */
+  border-radius: 25px;
   transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
 }
+
+/* Other CSS rules remain unchanged */
+
+/* Other CSS rules remain unchanged */
 
 .item:nth-child(1),
 .item:nth-child(2) {
@@ -649,8 +653,8 @@ margin: 20px;
   top: 0;
   width: 100%;
   height: 40vh;
-  transform: scale(1.5);
-  border-radius: 0;
+  transform: scale(2);
+  border-radius: 25px;
   box-shadow: none;
   opacity: 1;
 }
@@ -726,7 +730,7 @@ margin: 0 auto;
 
 .nav {
   position: absolute;
-  bottom: 2rem;
+  bottom: -3rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
@@ -795,8 +799,7 @@ radial-gradient(at 92% 0%, hsla(7,0%,0%,1) 0px, transparent 50%);/**/
             margin: 0 auto; /* Center horizontally */
             padding: 40px;
 /*glassmorph*/
- backdrop-filter: blur(23px) saturate(209%);
-    -webkit-backdrop-filter: blur(23px) saturate(209%);
+ /*backdrop-filter: blur(23px) saturate(209%);*/
     background-color: rgb(25 25 28 / 78%);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
@@ -827,13 +830,11 @@ radial-gradient(at 92% 0%, hsla(7,0%,0%,1) 0px, transparent 50%);/**/
             width: 100%;
             padding: 10px;
             border: none;
-
+color: white;
             transition: border-bottom 0.3s ease;
             outline: none;
             font-size: 16px;
-         backdrop-filter: blur(23px) saturate(209%);
-    -webkit-backdrop-filter: blur(23px) saturate(209%);
-    background-color: rgb(25 25 28 / 78%);
+            background-color: rgb(25 25 28 / 78%);
     border-radius: 12px;
     
 
@@ -870,7 +871,7 @@ radial-gradient(at 92% 0%, hsla(7,0%,0%,1) 0px, transparent 50%);/**/
     text-align: center; /* Center align text */
     font-size: 32px; /* Adjust font size */
     margin-bottom: 32px; /* Add margin for spacing */
-padding: 30px;
+padding-bottom: 12vw;
 }
 
 
@@ -1186,15 +1187,17 @@ background-position: right center; /* change the direction of the change here */
 
 /* Section styles */
 .section {
-    padding: 80px 20px;
+    padding: 123px 20px;
     text-align: center;
     margin-bottom: 50px; /* Add margin to create distance between sections */
 
 }
-
+#contact{
+    padding-top: 40vh;
+}
 .section #high {
     padding-top: 3vh;
-    margin: 20vh;
+    margin: 0 10vw 10vh 10vw;
     background: url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=fff00);
     /* margin: -2px -6px; */
     font-size: 2.4em;

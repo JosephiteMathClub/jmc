@@ -1,3 +1,17 @@
+ var firebaseConfig = {
+      apiKey: "AIzaSyCQt_FoOFThE-tBcSjdQsax4LF2fdINdGs",
+  authDomain: "jmc-db.firebaseapp.com",
+  projectId: "jmc-db",
+  storageBucket: "jmc-db.appspot.com",
+  messagingSenderId: "970268771226",
+  appId: "1:970268771226:web:494babd356a7452284b023",
+  measurementId: "G-B7FV63SW95"
+
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -82,7 +96,9 @@ function startSpinner() {
     spinner.style.display = 'block';
 
     // Simulate loading process (e.g., API call) for demonstration
-    setTimeout(function() {
+   sendMessage().then(function(){
+
+ setTimeout(function() {
         // Hide spinner and show submit button again after some delay (e.g., 3 seconds)
         spinner.style.display = 'none';
         submitBtn.style.display = 'inline-block';
@@ -91,6 +107,7 @@ function startSpinner() {
         overlay.style.display = 'block';
         popup.style.display = 'block';
     }, 3000); // Adjust this time according to your loading process
+   })
 }
 
 const overlay = document.getElementById('overlay');
@@ -103,6 +120,56 @@ okBtn.addEventListener('click', function() {
   popup.style.display = 'none';
 });
 
+/**/
+
+// Function to send message
+function sendMessage() {
+    return new Promise((resolve, reject) => {
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const messageInput = document.getElementById("message");
+
+        // Check if the elements exist
+        if (nameInput && emailInput && phoneInput && messageInput) {
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const phone = phoneInput.value;
+            const message = messageInput.value;
+
+            // Add a new document with a generated ID to the "messages" collection
+            db.collection("messages").add({
+                name: name,
+                email: email,
+                phone: phone,
+                message: message,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp() // Add timestamp
+            })
+            .then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                document.getElementById("spinner").style.display = "none";
+                // Clear input fields after successful submission
+                nameInput.value = "";
+                emailInput.value = "";
+                phoneInput.value = "";
+                messageInput.value = "";
+                resolve(); // Resolve the promise when the operation is successful
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+                document.getElementById("spinner").style.display = "none";
+                reject(error); // Reject the promise if there's an error
+            });
+        } else {
+            console.error("One or more input elements not found.");
+            reject(new Error("One or more input elements not found.")); // Reject the promise if elements not found
+        }
+    });
+}
+
+
+
+/**/
 const slider = document.querySelector('.slider');
 
 function activate(e) {
@@ -174,6 +241,7 @@ anime({
 
 
 //article logic
+/*
 const Artslider = document.querySelector('.art-slider');
 const dotsContainer = document.querySelector('.dots-container');
 const cards = document.querySelectorAll('.art-card');
@@ -248,7 +316,7 @@ document.addEventListener('click', event => {
         closeButtons.forEach(button => button.remove());
     }
 });
-
+*/
 function footerToggle(footerBtn) {
     $(footerBtn).toggleClass("btnActive");
     $(footerBtn).next().toggleClass("active");
