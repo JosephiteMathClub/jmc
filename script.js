@@ -12,6 +12,9 @@
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
 
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -228,16 +231,34 @@ function typeWriter() {
 typeWriter();
 
 // Anime.js animation to slide the loading screen to the top
+// Hide the images initially
+document.querySelectorAll('.image-container').forEach(function(imageContainer) {
+    imageContainer.style.visibility = 'hidden';
+});
+
 anime({
     targets: '.container',
     opacity: 0,
-    duration: 7000, // Adjust duration as needed
+    duration: 6000, // Adjust duration as needed
     easing: 'easeInOutQuad', // Adjust easing as needed
     complete: function() {
         document.querySelector('.container').style.display = 'none';
-  //      enableTouch();
+        
+        // Make the images visible and animate their transition
+        document.querySelectorAll('.image-container').forEach(function(imageContainer) {
+            imageContainer.style.visibility = 'visible';
+
+            anime({
+                targets: imageContainer,
+                translateX: [imageContainer.classList.contains('left') ? '-200px' : '200px', 0], // Slide from left or right
+                opacity: [0, 1], // Start from invisible and become visible
+                duration: 1100, // Animation duration
+                easing: 'easeInOutQuad' // Easing function
+            });
+        });
     }
 });
+
 
 
 //article logic
