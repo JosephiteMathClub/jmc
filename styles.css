@@ -1,3 +1,16 @@
+@media screen and (max-width: 768px) {
+        .glass-card {
+            width: calc(50% - 20px); /* Adjust the width of each card for smaller screens */
+            max-width: calc(50% - 20px); /* Adjust the maximum width */
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .glass-card {
+            width: calc(100% - 20px); /* Adjust the width of each card for even smaller screens */
+            max-width: calc(100% - 20px); /* Adjust the maximum width */
+        }
+    }
 .event-container{
 display: flex;
 flex-wrap: wrap;
