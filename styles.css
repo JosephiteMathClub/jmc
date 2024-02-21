@@ -1,4 +1,24 @@
-
+.event-container{
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+.glass-card {
+        width: calc(33.333% - 20px); /* Adjust the width of each card, considering the gap */
+        max-width: 300px; /* Adjust the maximum width */
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        backdrop-filter: blur(23px) saturate(209%);
+        -webkit-backdrop-filter: blur(23px) saturate(209%);
+        background-color: rgba(25, 25, 28, 0.78);
+        border-radius: 12px;
+        border: 1px solid rgba(37, 170, 225, 1);
+    }
+    .glass-card .content {
+        padding: 20px;
+        text-align: center;
+} 
 
 /* Reset default margin, padding, and box-sizing */
 * {
