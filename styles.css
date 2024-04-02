@@ -919,7 +919,10 @@ padding-bottom: 12vw;
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.125);
     background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
-
+padding-left: 5px;
+padding-right: 5px;
+margin-right: 5px;
+margin-right: 5px;
             margin: 10px;
             padding: 15px 45px;
             text-align: center;
@@ -1165,7 +1168,7 @@ background-position: right center; /* change the direction of the change here */
     100% { transform: rotate(360deg); }
 }
 
-}
+
   @media screen and (max-width: 768px) {
             .login-box {
                 width: 70%; /* Adjust width for smaller screens */
