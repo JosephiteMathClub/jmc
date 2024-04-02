@@ -31,7 +31,7 @@ var firebaseConfig = {
       .catch((error) => {
         // Login failed, log the error and redirect to jmm.html
         console.error("Error logging in:", error);
-        window.location.href = "jmm.html";
+        window.location.href = "/jmc/jmm.html";
       });
   });
   
