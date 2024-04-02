@@ -20,6 +20,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links li');
     const navbar = document.querySelector('nav');
+//about text
+var aboutCard = document.querySelector('.about-card');
+var readMoreBtn = aboutCard.querySelector('.read-more-btn');
+var aboutContent = aboutCard.querySelector('.about-content');
+
+readMoreBtn.addEventListener('click', function () {
+    event.preventDefault(); // Prevent default behavior of anchor element
+
+    // Toggle the 'open' class to expand/collapse the content
+    var isOpen = aboutCard.classList.toggle('open');
+    
+    if (isOpen) {
+        // Expand the content
+        anime({
+            targets: aboutContent,
+            height: aboutContent.scrollHeight,
+            duration: 800, // Adjust the duration as needed
+            easing: 'easeInOutQuad' // Adjust the easing function as needed
+        });
+    } else {
+        // Retract the content
+        anime({
+            targets: aboutContent,
+            height: 80, // Initial height
+            duration: 800, // Adjust the duration as needed
+            easing: 'easeInOutQuad' // Adjust the easing function as needed
+        });
+    }
+});
+  //
 
     burgerMenu.addEventListener('click', function() {
         if (navLinks.classList.contains('nav-active')) {
