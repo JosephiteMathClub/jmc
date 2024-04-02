@@ -1,13 +1,12 @@
 // Initialize Firebase
 var firebaseConfig = {
-    apiKey: "AIzaSyCQt_FoOFThE-tBcSjdQsax4LF2fdINdGs",
-authDomain: "jmc-db.firebaseapp.com",
-projectId: "jmc-db",
-storageBucket: "jmc-db.appspot.com",
-messagingSenderId: "970268771226",
-appId: "1:970268771226:web:494babd356a7452284b023",
-measurementId: "G-B7FV63SW95"
-
+  apiKey: "AIzaSyCQt_FoOFThE-tBcSjdQsax4LF2fdINdGs",
+  authDomain: "jmc-db.firebaseapp.com",
+  projectId: "jmc-db",
+  storageBucket: "jmc-db.appspot.com",
+  messagingSenderId: "970268771226",
+  appId: "1:970268771226:web:494babd356a7452284b023",
+  measurementId: "G-B7FV63SW95"
   };
 
   
@@ -39,9 +38,9 @@ measurementId: "G-B7FV63SW95"
         .then((userCredential) => {
           // Signed in
           var user = userCredential.user;
-  
+          user.displayName = name;
           // Add a new document with a generated ID to the "registrations" collection
-          db.collection("intra-registrations").doc(user.uid).set({
+          db.collection("intra").doc(user.uid).set({
             name: name,
             class: classValue,
             roll: roll,
@@ -51,6 +50,7 @@ measurementId: "G-B7FV63SW95"
           })
           .then(function() {
             console.log("Document successfully written!");
+            
             // Redirect user to profile.html after successful registration
             window.location.href = "profile.html";
           })
