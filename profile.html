@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profile</title>
+<link rel="stylesheet" href="profile.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,8 @@
             <ul class="nav-links">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#articles">Articles</a></li>
+
                 <li><a href="index.html#events">Events</a></li>
                 <li><a href="index.html#gallery">Gallery</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
@@ -33,7 +36,33 @@
 <br>
     <div style="text-align: center;" id="profile-container">
         <h1>Your Information</h1>
+        <br>
         <div id="user-info"></div>
+        <button class="signout-btn" id="signout-btn">Sign Out</button>
+
+        <br>
+        <h1>Events</h1>
+
+        <div class="event-container">
+            <div class="glass-card">
+              <div class="content">
+                <h2>Event One</h2>
+                <input type="checkbox" id="event-one" />
+                <label for="event-one">Attend Event One</label>
+              </div>
+            </div>
+            <div class="glass-card">
+              <div class="content">
+                <h2>Event Two</h2>
+                <input type="checkbox" id="event-two" />
+                <label for="event-two">Attend Event Two</label>
+              </div>
+            </div>
+            <!-- Add more glass cards for other events as needed -->
+          </div>
+          <button id="submit-btn" class="submit-btn">Submit </button>
+
+          
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -65,7 +94,7 @@
                 displayUserInfo(user);
             } else {
                 // No user is signed in, redirect to index.html
-                window.location.href = "index.html";
+ //               window.location.href = "index.html";
             }
         });
 
@@ -74,7 +103,7 @@
             var userInfo = document.getElementById("user-info");
             userInfo.innerHTML = "";
             var userData = [
-                { label: "Name", value: user.displayName },
+                
                 { label: "Email", value: user.email },
                 { label: "UID", value: user.uid }
                 // Add more fields as needed
@@ -84,6 +113,7 @@
             db.collection("intra").doc(user.uid).get().then(function(doc) {
                 if (doc.exists) {
                     userData.push(
+                        { label: "Name", value: doc.data().name },
                         { label: "Class", value: doc.data().class },
                         { label: "Roll", value: doc.data().roll },
                         { label: "Section", value: doc.data().section },
@@ -221,7 +251,7 @@ font-size: 22px;
         border-radius: 10px;
         cursor: pointer;
         border: none;
-        width: 50%;
+        width: 128px;
         margin: 0 auto; /* Center the button */
     }
     .submit-btn:hover {
@@ -422,6 +452,8 @@ font-size: 22px;
     
         .nav-active li {
             margin: 20px 0;
+            padding: 0;
+
         }
     
         .burger-menu {
@@ -445,6 +477,7 @@ font-size: 22px;
     
     .nav-links li {
         margin-right: 20px;
+        padding-right: 34px;
     }
     
     .nav-links li a {
@@ -486,7 +519,7 @@ font-size: 22px;
     font-family: 'Abel', sans-serif;
      font-weight: 400;
         font-size: 35px;
-        color: #656565;
+        color: #00cdac;
     }
     
     .dummy-text {
@@ -509,7 +542,7 @@ font-size: 22px;
     border: 1px solid rgba(255, 255, 255, 0.125);
 
     padding: 20px;
-    margin-top: auto; /* Push the footer to the bottom */
+    margin-top: 32vh; /* Push the footer to the bottom */
     text-align: center;
     justify-content: space-between;
     align-items: center;
@@ -888,12 +921,12 @@ font-size: 22px;
         .nav-links {
                 display: none; /* Hide nav links by default */
             position: absolute;
-            top: 70px;
+            top: 71px;
             right: 0;
-            left: 0; /* Center nav links horizontally */
+            /*left: 0; /* Center nav links horizontally */
             background-color: rgba(84, 84, 86, 0.5);
             backdrop-filter: blur(10px);
-            border-radius: 10px;
+            border-radius: 3px;
         }
     
         .nav-active {
@@ -905,6 +938,7 @@ font-size: 22px;
     
         .nav-active li {
             margin: 20px 0;
+            padding: 0;
         }
     
         .burger-menu {
@@ -1024,8 +1058,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
- <script src="jmm-login.js"></script>
-
+<script src="profile.js"></script>
  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  </body>

@@ -1,0 +1,68 @@
+.glass-card {
+    width: calc(33.333% - 20px); /* Adjust the width of each card, considering the gap */
+    max-width: 200px; /* Adjust the maximum width */
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for glass effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
+    margin-bottom: 20px;
+  }
+  
+  .glass-card .content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  input[type="checkbox"] {
+    display: none; /* Hide the checkbox */
+  }
+  
+  input[type="checkbox"] + label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  input[type="checkbox"]:checked + label {
+    background: #02aab0; /* Change background color when checkbox is checked */
+    color: white;
+  }
+ 
+  
+  button#submit-btn {
+    position: relative;
+}
+
+
+  /* Center the event cards */
+.event-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .signout-btn {
+background-image: linear-gradient(to right, #e70c5d 0%, #ff5c5c 51%, #630500 100%);    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    width: 90px;
+    margin: 0 auto; /* Center the button */
+}
+
+.signout-btn:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}

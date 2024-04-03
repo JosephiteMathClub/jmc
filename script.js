@@ -372,24 +372,48 @@ function footerToggle(footerBtn) {
     $(footerBtn).toggleClass("btnActive");
     $(footerBtn).next().toggleClass("active");
 }
+let popupVisibleOne = false; // Flag to track popup visibility for first popup
+let popupVisibleTwo = false; // Flag to track popup visibility for second popup
 
-function openPopup() {
+function openPopupOne() {
+    if (!popupVisibleOne && !popupVisibleTwo) { // Check if neither popup is already visible
+        const popup = createPopup('JMM Inter', () => {
+            popupVisibleOne = false; // Update popup visibility flag for first popup
+        });
+        document.body.appendChild(popup);
+        document.body.classList.add('blurry-background');
+        popupVisibleOne = true; // Update popup visibility flag for first popup
+    }
+}
+
+function openPopupTwo() {
+    if (!popupVisibleOne && !popupVisibleTwo) { // Check if neither popup is already visible
+        const popup = createPopup('JMM Intra', () => {
+            popupVisibleTwo = false; // Update popup visibility flag for second popup
+        });
+        document.body.appendChild(popup);
+        document.body.classList.add('blurry-background');
+        popupVisibleTwo = true; // Update popup visibility flag for second popup
+    }
+}
+
+function createPopup(titleText, onClose) {
     const popup = document.createElement('div');
     popup.classList.add('popup-container');
 
     const title = document.createElement('h2');
     title.classList.add('popup-title');
-    title.innerText = 'JMM Intra';
+    title.innerText = titleText;
     popup.appendChild(title);
 
     const content = document.createElement('div');
     content.classList.add('popup-content');
     content.innerHTML = `
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sapien ac justo ullamcorper congue. Nulla facilisi. Vestibulum id dui semper, commodo ex in, eleifend elit. Integer nec arcu vitae eros suscipit finibus. Sed vel leo auctor, pulvinar libero at, gravida mauris. Duis ullamcorper est a tellus dapibus, nec feugiat purus pharetra. In ac aliquam libero, eget congue sem.</p>
-      <p>Sed vitae commodo ex. Nam eu enim urna. Sed tempus fringilla tortor, nec lacinia nisl scelerisque eget. Aliquam erat volutpat. Fusce feugiat quam sit amet eleifend condimentum. Vivamus auctor nunc ligula, vel gravida dolor consequat vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi id interdum enim.</p>
-      <p>Etiam aliquam mauris ac odio bibendum sodales. Suspendisse et nisi ut elit efficitur tincidunt. Curabitur laoreet, ipsum eget placerat dapibus, urna sapien dapibus nunc, nec gravida dolor neque et justo. Praesent pharetra turpis id leo hendrerit consectetur. Suspendisse quis purus eleifend, venenatis lorem vel, tincidunt turpis. Nulla facilisi.</p>
-      <p>Phasellus vehicula, ipsum eget cursus fermentum, mauris erat venenatis quam, id luctus ante est nec tortor. Integer a sodales risus. Ut at turpis felis. Curabitur vel nunc vitae risus iaculis dictum ac et felis. Mauris aliquam nisi vitae nisi convallis, at malesuada dui rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-      <p>Proin sollicitudin lectus et nibh convallis consequat. Morbi consectetur massa eget felis aliquam, non lacinia libero efficitur. Donec nec nisi vel ipsum lacinia aliquet non sit amet tortor. Sed vitae vestibulum turpis. Suspendisse potenti. Sed scelerisque leo vel ex hendrerit fermentum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sapien ac justo ullamcorper congue. Nulla facilisi. Vestibulum id dui semper, commodo ex in, eleifend elit. Integer nec arcu vitae eros suscipit finibus. Sed vel leo auctor, pulvinar libero at, gravida mauris. Duis ullamcorper est a tellus dapibus, nec feugiat purus pharetra. In ac aliquam libero, eget congue sem.</p>
+        <p>Sed vitae commodo ex. Nam eu enim urna. Sed tempus fringilla tortor, nec lacinia nisl scelerisque eget. Aliquam erat volutpat. Fusce feugiat quam sit amet eleifend condimentum. Vivamus auctor nunc ligula, vel gravida dolor consequat vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi id interdum enim.</p>
+        <p>Etiam aliquam mauris ac odio bibendum sodales. Suspendisse et nisi ut elit efficitur tincidunt. Curabitur laoreet, ipsum eget placerat dapibus, urna sapien dapibus nunc, nec gravida dolor neque et justo. Praesent pharetra turpis id leo hendrerit consectetur. Suspendisse quis purus eleifend, venenatis lorem vel, tincidunt turpis. Nulla facilisi.</p>
+        <p>Phasellus vehicula, ipsum eget cursus fermentum, mauris erat venenatis quam, id luctus ante est nec tortor. Integer a sodales risus. Ut at turpis felis. Curabitur vel nunc vitae risus iaculis dictum ac et felis. Mauris aliquam nisi vitae nisi convallis, at malesuada dui rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <p>Proin sollicitudin lectus et nibh convallis consequat. Morbi consectetur massa eget felis aliquam, non lacinia libero efficitur. Donec nec nisi vel ipsum lacinia aliquet non sit amet tortor. Sed vitae vestibulum turpis. Suspendisse potenti. Sed scelerisque leo vel ex hendrerit fermentum.</p>
     `;
     popup.appendChild(content);
 
@@ -397,11 +421,11 @@ function openPopup() {
     closeBtn.classList.add('close-btn');
     closeBtn.innerHTML = '&times;';
     closeBtn.addEventListener('click', () => {
-      document.body.removeChild(popup);
-      document.body.classList.remove('blurry-background');
+        document.body.removeChild(popup);
+        document.body.classList.remove('blurry-background');
+        onClose(); // Call the provided onClose callback function
     });
     popup.appendChild(closeBtn);
 
-    document.body.appendChild(popup);
-    document.body.classList.add('blurry-background');
-  }
+    return popup;
+}

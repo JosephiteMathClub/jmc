@@ -988,6 +988,15 @@ background-position: right center; /* change the direction of the change here */
             
 }
 
+/*media query for alignment*/
+@media screen and (max-width: 660px) {
+    .glass-card {
+        width: calc(100% - 20px); /* Adjust the width of each card for smaller screens */
+       /* max-width: calc(100% - 20px); /* Adjust the maximum width */
+        margin: 0 auto; /* Center the cards */
+    }
+}
+
 /* Navbar styles */
 .navbar {
     display: flex;
@@ -1018,6 +1027,8 @@ background-position: right center; /* change the direction of the change here */
 
 .nav-links li {
     margin-right: 20px;
+    padding-right: 34px;
+
 }
 
 .nav-links li a {
@@ -1213,6 +1224,8 @@ background-position: right center; /* change the direction of the change here */
 
     .nav-active li {
         margin: 20px 0;
+        padding: 0;
+
     }
 
     .burger-menu {
@@ -1299,7 +1312,7 @@ footer {
         position: absolute;
         top: 70px;
         right: 0;
-        left: 0; /* Center nav links horizontally */
+      /*  left: 0; /* Center nav links horizontally */
         background-color: rgba(84, 84, 86, 0.5);
         backdrop-filter: blur(10px);
         border-radius: 10px;
@@ -1314,6 +1327,8 @@ footer {
 
     .nav-active li {
         margin: 20px 0;
+        padding: 0;
+
     }
 
     .burger-menu {
@@ -1337,7 +1352,6 @@ footer {
     max-height: 80%;
     overflow-y: auto;
     z-index: 1000;
-    backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   }
 

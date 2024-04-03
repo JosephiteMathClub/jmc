@@ -52,8 +52,14 @@ var firebaseConfig = {
             console.log("Document successfully written!");
             
             // Redirect user to profile.html after successful registration
-            window.location.href = "profile.html";
-          })
+            document.querySelector('.submit-btn').innerHTML = "Submitting..."
+    
+            // Wait for 2 seconds before redirecting
+            setTimeout(function() {
+              // Redirect user to profile.html after successful registration
+              window.location.href = "profile.html";
+            }, 2000); // Redirect after 2 seconds
+                    })
           .catch(function(error) {
             console.error("Error writing document: ", error);
           });

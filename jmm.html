@@ -241,6 +241,8 @@ list-style: none;
 
     .nav-active li {
         margin: 20px 0;
+        padding: 0;
+
     }
 
     .burger-menu {
@@ -264,6 +266,8 @@ list-style: none;
 
 .nav-links li {
     margin-right: 20px;
+    padding-right: 34px;
+
 }
 
 .nav-links li a {
@@ -709,7 +713,7 @@ font-family: 'Abel', sans-serif;
         position: absolute;
         top: 70px;
         right: 0;
-        left: 0; /* Center nav links horizontally */
+      /*  left: 0; /* Center nav links horizontally */
         background-color: rgba(84, 84, 86, 0.5);
         backdrop-filter: blur(10px);
         border-radius: 10px;
@@ -724,6 +728,8 @@ font-family: 'Abel', sans-serif;
 
     .nav-active li {
         margin: 20px 0;
+        padding: 0;
+
     }
 
     .burger-menu {
@@ -763,6 +769,9 @@ font-family: 'Abel', sans-serif;
 
     /**/
 
+
+
+
 </style>
 </head>
 <body>
@@ -773,6 +782,8 @@ font-family: 'Abel', sans-serif;
         <ul class="nav-links">
             <li><a href="index.html#home">Home</a></li>
             <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#articles">Articles</a></li>
+
             <li><a href="index.html#events">Events</a></li>
             <li><a href="index.html#gallery">Gallery</a></li>
             <li><a href="index.html#contact">Contact</a></li>
@@ -916,8 +927,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <input type="text" id="password" name="password" required>
             <label for="password">Password</label>
         </div>
-        <button type="submit" class="submit-btn">Submit</button>
-    </form>
+        <button type="submit" class="submit-btn">
+            Submit
+       
+        </button>
+
+            </form>
 
 </div>
 <br>
