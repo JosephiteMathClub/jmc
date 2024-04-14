@@ -72,7 +72,7 @@
                  <span class="footer-cat">Resources</span>
              </div>
              <ul class="footer-cat-links">
-                 <li><a href="#gallery"><span>Gallery</span></a></li>
+                 <li><a href="index.html#articles"><span>Gallery</span></a></li>
                  <li><a href=""><span>Magazine Draft</span></a></li>
                  <li><a href=""><span>Math problems</span></a></li>
                  <li><a href=""><span>Mock tests</span></a></li>
@@ -87,7 +87,7 @@
              <ul class="footer-cat-links">
                  <li><a href="#home"><span>Home</span></a></li>
                  <li><a href="#events"><span>Events</span></a></li>
-                 <li><a href="#articles"><span>Articles</span></a></li>
+                 <li><a href="#index.html#articles"><span>Articles</span></a></li>
                  <li><a href="#contact"><span>Contact</span></a></li>
              </ul>
          </div>
@@ -100,7 +100,7 @@
              
              <div class="social-links social-2">
                  <a href="https://www.facebook.com/2015JMC/photos"><i class="fab fa-facebook-f"></i></a>
-                 <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
              </div>
 
              <div id="address">
@@ -117,8 +117,8 @@
              
          </div>
          <div class="social-links social-1 col-6">
-             <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-facebook-f"></i></a>
-             <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+             <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-facebook-f"></i></a>
+             <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
          </div>
     </div>
     <div id="copyright">
@@ -1006,7 +1006,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
  <script src="jmm-login.js"></script>
-
+<script>
+            function footerToggle(footerBtn) {
+    $(footerBtn).toggleClass("btnActive");
+    $(footerBtn).next().toggleClass("active");
+}
+</script>
  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  </body>

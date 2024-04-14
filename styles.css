@@ -55,7 +55,7 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
-/* Code by CodingTuting.Com */
+
 html {
     scroll-behavior: smooth;
 }
@@ -764,13 +764,24 @@ margin: 0 auto;
 }
 
 .nav {
-  position: absolute;
-  bottom: -3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  user-select: none;
+    position: absolute;
+    left: 36vw;
+    transform: translateX(-50%);
+    transform: translateY(548%);
+    z-index: 5;
+    user-select: none;
 }
+
+@media (min-width: 610px) {
+    .nav {
+      left: 46vw; /* Adjust left position to center */
+    }
+  }
+  @media (min-width: 955px) {
+    .nav {
+      left: 47vw; /* Adjust left position to center */
+    }
+  } 
 
 .nav .btn {
   background-color: rgba(255, 255, 255, 0.5);
@@ -907,7 +918,7 @@ color: white;
     text-align: center; /* Center align text */
     font-size: 32px; /* Adjust font size */
     margin-bottom: 32px; /* Add margin for spacing */
-padding-bottom: 12vw;
+height: 22vh;
 }
 
 
@@ -1239,22 +1250,11 @@ background-position: right center; /* change the direction of the change here */
 
 /* Section styles */
 .section {
-    padding: 123px 20px;
     text-align: center;
     margin-bottom: 50px; /* Add margin to create distance between sections */
 
 }
-#contact{
-    padding-top: 40vh;
-}
-.section #high {
-    padding-top: 3vh;
-    margin: 0 10vw 10vh 10vw;
-    background: url(https://s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=fff00);
-    /* margin: -2px -6px; */
-    font-size: 2.4em;
 
-}
 
 /* Footer styles */
 footer {
@@ -1377,4 +1377,35 @@ footer {
   }
 
   
+  
+  #myVideo {
+    min-width: 100%;
+  }
+  
+  .contentt {
+    position: absolute;
+    bottom: 200px; /* Adjust this value to change the distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the button appears above the video */
+  }
+  
+  /* Style the button used in the video */
+  #myBtn {
+    text-align: center;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+    color: #02AAB0; /* Initial text color */
+    padding: 10px 15px;
+    border: 2px solid #02AAB0; /* Initial border color */
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    background-color: transparent;
+  }
+  
+  #myBtn:hover {
+    background-color: #02AAB0; /* Fill color on hover */
+    color: white; /* Text color on hover */
+    border-color: transparent; /* Hide border on hover */
+  }
   

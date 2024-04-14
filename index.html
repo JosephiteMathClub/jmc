@@ -52,15 +52,21 @@
 <header>
     <section id="home" class="section">
         <!--Hero sec-->
-        <div class="containerr">
-            <div class="image-container left">
-             <!--   <img src="sjs-logo.png" alt="Left Image" class="responsive-image">-->
-            </div>
-            <h2 id="high">Josephite Math Club</h2>
-            <div class="image-container right">
-                <!--  <img src="jmc.jpg" alt="Right Image" class="responsive-image">-->
-            </div>
+        <video autoplay muted loop id="myVideo">
+            <source src="/gallery/GCb3EBk5PGUxsG4BAEd0GXahwW8rbmdjAAAF.mp4" type="video/mp4">
+          </video>
+        <!--Btn-->
+        <div class="contentt">
+            <a href="#about">
+            <button id="myBtn">Learn More</button>
+        </a>
         </div>
+
+          <audio autoplay loop id="audio">
+            <source src="/gallery/bgm.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+
     </section>
 </header>
 
@@ -84,13 +90,14 @@
     </div>
 
     </section>
-
+<br>
  <!--articles-->
 
 <section class="articles-section" id="articles">
     <h2 class="section-title">Articles</h2>  
 </section>
 
+<br>
 
     <!-- Events Section -->
     <section id="events" class="section glass-section">
@@ -126,9 +133,9 @@
     </section>
 
     <!-- Gallery Section -->      
-      <h2 class="section-title" style="padding-bottom: 14vh;">Gallery</h2>
+      <h2 class="section-title" style="height: 30vh;">Gallery</h2>
 
-    <section id="gallery" class="section glass-section">
+    <section id="gallery" style="padding-bottom: 64vh;" class="section glass-section">
         <!-- Add content for the gallery section -->
 <main>
   <ul class='slider'>
@@ -258,7 +265,7 @@
                 <ul class="footer-cat-links">
                     <li><a href="#home"><span>Home</span></a></li>
                     <li><a href="#events"><span>Events</span></a></li>
-                    <li><a href="#articles"><span>Articles</span></a></li>
+                    <li><a href="index.html#articles"><span>Articles</span></a></li>
                     <li><a href="#contact"><span>Contact</span></a></li>
                 </ul>
             </div>
@@ -271,7 +278,7 @@
                 
                 <div class="social-links social-2">
                     <a href="https://www.facebook.com/2015JMC/photos"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
                 </div>
 
                 <div id="address">
@@ -288,8 +295,8 @@
                 
             </div>
             <div class="social-links social-1 col-6">
-                <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
             </div>
        </div>
        <div id="copyright">
@@ -305,16 +312,13 @@
 
 <style>
     header {
- background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mathstimes.com%2Fwp-content%2Fuploads%2F2014%2F11%2Fmathtimes.jpg&f=1&nofb=1&ipt=33b7b0538e07ac2865abf034305cb7139e4e058e8e0cf22184e8f576d3c0b8a2&ipo=images');
-    height: 900px;
+
     text-align: center;
     width: 100%;
     height: auto;
-    background-size: cover;
-    background-attachment: fixed;
+
     position: relative;
-    overflow: hidden;
-    border-radius: 0 0 141% 79% / 32%;
+
 }
 
 header .overlay{
@@ -425,7 +429,7 @@ header .overlay{
 
     </style>
 <script>
-  
+ document.getElementById("audio").autoplay;
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 

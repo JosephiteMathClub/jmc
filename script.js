@@ -12,24 +12,24 @@
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links li');
     const navbar = document.querySelector('nav');
-//about text
+//nav
+    //about text
 var aboutCard = document.querySelector('.about-card');
 var readMoreBtn = aboutCard.querySelector('.read-more-btn');
 var aboutContent = aboutCard.querySelector('.about-content');
 
 readMoreBtn.addEventListener('click', function () {
     event.preventDefault(); // Prevent default behavior of anchor element
-
     // Toggle the 'open' class to expand/collapse the content
     var isOpen = aboutCard.classList.toggle('open');
+    var isOpen = aboutCard.classList.toggle('open');
+    
+    var isOpen = aboutCard.classList.toggle('open');   
     
     if (isOpen) {
         // Expand the content
@@ -128,7 +128,7 @@ function startSpinner() {
     submitBtn.style.display = 'none';
     spinner.style.display = 'block';
 
-    // Simulate loading process (e.g., API call) for demonstration
+    // Simulate loading process for demonstration
    sendMessage().then(function(){
 
  setTimeout(function() {
@@ -217,15 +217,27 @@ function updateNavbar() {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-links a');
 
+    // Initialize variables to keep track of the closest section
+    let closestSectionIndex = 0;
+    let closestDistance = Math.abs(window.scrollY - sections[0].offsetTop);
+
+    // Find the closest section to the top of the viewport
     sections.forEach((section, index) => {
-        const top = section.offsetTop;
-        const height = section.clientHeight;
-        if (window.scrollY >= top && window.scrollY < top + height) {
-            navLinks.forEach((navLink) => navLink.classList.remove('active'));
-            navLinks[index].classList.add('active');
+        const distance = Math.abs(window.scrollY - section.offsetTop);
+        if (distance < closestDistance) {
+            closestSectionIndex = index;
+            closestDistance = distance;
         }
     });
+
+    // Remove active class from all nav links
+    navLinks.forEach((navLink) => navLink.classList.remove('active'));
+
+    // Add active class to the corresponding nav link for the closest section
+    navLinks[closestSectionIndex].classList.add('active');
 }
+
+
 
 // Add event listener for scroll event
 window.addEventListener('scroll', updateNavbar);
@@ -239,14 +251,8 @@ function enableTouch() {
     document.querySelector('body').style.pointerEvents = 'none';
 }
 
-// Call disableTouch function when the loading screen starts
-//disableTouch();
-
-// Call enableTouch function when the loading is complete
-//setTimeout(enableTouch, 5000); // Adjust the time according to loading process
-
 const textElement = document.querySelector('.calculating-text');
-const text = "Calculating.  dx";
+const text = "Calculating.  dt";
 let index = 0;
 
 function typeWriter() {
@@ -256,8 +262,6 @@ function typeWriter() {
         setTimeout(typeWriter, 100); // Adjust typing speed here
     }
 }
-
-// Call typeWriter function
 typeWriter();
 
 // Anime.js animation to slide the loading screen to the top
@@ -266,10 +270,11 @@ document.querySelectorAll('.image-container').forEach(function(imageContainer) {
     imageContainer.style.visibility = 'hidden';
 });
 
+//hiding the loading screen
 anime({
     targets: '.container',
     opacity: 0,
-    duration: 6000, // Adjust duration as needed
+    duration: 4500, // Adjust duration as needed
     easing: 'easeInOutQuad', // Adjust easing as needed
     complete: function() {
         document.querySelector('.container').style.display = 'none';
@@ -291,87 +296,13 @@ anime({
 
 
 
-//article logic
-/*
-const Artslider = document.querySelector('.art-slider');
-const dotsContainer = document.querySelector('.dots-container');
-const cards = document.querySelectorAll('.art-card');
 
-let index2 = 0;
-
-function updateSlider() {
-    Artslider.style.transform = `translateX(${-index2 * 320}px)`; // Adjust card width plus margin
-}
-
-function updateDots() {
-    dotsContainer.innerHTML = '';
-    cards.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if (i === index2) {
-            dot.classList.add('active');
-        }
-        dot.addEventListener('click', () => {
-            index2 = i;
-            updateSlider();
-            updateDots();
-        });
-        dotsContainer.appendChild(dot);
-    });
-}
-
-updateDots();
-
-// JavaScript for full screen article view
-const readMoreBtns = document.querySelectorAll('.read-more-btn');
-const articleCards = document.querySelectorAll('.art-card');
-
-readMoreBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.style.display = "none";
-        const card = btn.closest('.art-card');
-        card.classList.add('full-screen');
-        
-        // Remove fullscreen attribute from other cards
-        articleCards.forEach(article => {
-            if (article !== card) {
-                article.classList.remove('full-screen');
-            }
-        });
-
-        // Create and append close button
-        const closeButton = document.createElement('button');
-        closeButton.innerHTML = '<i class="fas fa-times"></i>'; // Example close icon, you can replace it with your own icon
-        closeButton.classList.add('close-btn');
-        card.appendChild(closeButton);
-
-        // Add event listener to close button
-        closeButton.addEventListener('click', () => {
-            card.classList.remove('full-screen');
-            btn.style.display = "block";
-            closeButton.remove(); // Remove the close button
-        });
-    });
-});
-
-document.addEventListener('click', event => {
-    const isInsideArticle = event.target.closest('.art-card');
-    if (!isInsideArticle) {
-        articleCards.forEach(card => {
-            card.classList.remove('full-screen');
-        });
-        readMoreBtns.forEach(btn => {
-            btn.style.display = "block";
-        });
-        const closeButtons = document.querySelectorAll('.close-btn');
-        closeButtons.forEach(button => button.remove());
-    }
-});
-*/
 function footerToggle(footerBtn) {
     $(footerBtn).toggleClass("btnActive");
     $(footerBtn).next().toggleClass("active");
 }
+
+//Pop UP function
 let popupVisibleOne = false; // Flag to track popup visibility for first popup
 let popupVisibleTwo = false; // Flag to track popup visibility for second popup
 
@@ -396,16 +327,13 @@ function openPopupTwo() {
         popupVisibleTwo = true; // Update popup visibility flag for second popup
     }
 }
-
 function createPopup(titleText, onClose) {
     const popup = document.createElement('div');
     popup.classList.add('popup-container');
-
     const title = document.createElement('h2');
     title.classList.add('popup-title');
     title.innerText = titleText;
     popup.appendChild(title);
-
     const content = document.createElement('div');
     content.classList.add('popup-content');
     content.innerHTML = `

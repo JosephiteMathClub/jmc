@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', function() {
              <ul class="footer-cat-links">
                  <li><a href="#home"><span>Home</span></a></li>
                  <li><a href="#events"><span>Events</span></a></li>
-                 <li><a href="#articles"><span>Articles</span></a></li>
+                 <li><a href="#index.html#articles"><span>Articles</span></a></li>
                  <li><a href="#contact"><span>Contact</span></a></li>
              </ul>
          </div>
@@ -989,7 +989,7 @@ document.addEventListener('DOMContentLoaded', function() {
              
              <div class="social-links social-2">
                  <a href="https://www.facebook.com/2015JMC/photos"><i class="fab fa-facebook-f"></i></a>
-                 <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
              </div>
 
              <div id="address">
@@ -1006,8 +1006,8 @@ document.addEventListener('DOMContentLoaded', function() {
              
          </div>
          <div class="social-links social-1 col-6">
-             <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-facebook-f"></i></a>
-             <a href="https://www.instagram.com/josephite_mathclub/"><i class="fab fa-instagram"></i></a>
+             <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-facebook-f"></i></a>
+             <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
          </div>
     </div>
     <div id="copyright">
@@ -1029,5 +1029,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="jmm.js"></script>
+<script>
+            function footerToggle(footerBtn) {
+    $(footerBtn).toggleClass("btnActive");
+    $(footerBtn).next().toggleClass("active");
+}
+</script>
 </body>
 </html>
