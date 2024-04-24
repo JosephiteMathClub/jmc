@@ -1,256 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JMM Intra - Login</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="jmc.svg" alt="JMC Logo">
-        </div>
-            <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#articles">Articles</a></li>
+body {
+    font-family: 'Abel', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: #000000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Abel', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 
-                <li><a href="index.html#events">Events</a></li>
-                <li><a href="index.html#gallery">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="index.html#events"><button class="register-btn">Register</button></a></li>
-            </ul>
-        <div class="burger-menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-    </nav>
-
-<div class="login-box">
-    <h2>JMF Intra Login</h2>
-    <form id="login-form">
-        <div class="input-box">
-            <input type="email" id="email" name="email" required>
-            <label for="email">Email</label>
-        </div>
-        <div class="input-box">
-            <input type="password" id="password" name="password" required>
-            <label for="password">Password</label>
-        </div>
-        <button type="submit" id="submit-btn" class="submit-btn">Login</button>
-    </form>
-</div>
-<br>
-<br>
-<p style="text-align: center;">Didn't register before? <a style="color: #00CDAC;" href="jmm.html">Click here</a></p>
-
-<footer>
-    <div>
-         <span class="logo">Josephite Math Club</span>
-    </div>
-
-    <div class="row">
-         <div class="col-3">                
-             <div class="link-cat" onclick="footerToggle(this)">
-                 <span class="footer-toggle"></span>
-                 <span class="footer-cat">About</span>
-             </div>
-             <ul class="footer-cat-links">
-                 <li><a href="executive.html"><span>Executive Members</span></a></li>
-                 <li><a href="motto.html"><span>Club motto</span></a></li>
-                 <li><a href=""><span>Club History</span></a></li>
-             </ul>
-         </div>
-         <div class="col-3">
-             <div class="link-cat" onclick="footerToggle(this)">
-                 <span class="footer-toggle"></span>
-                 <span class="footer-cat">Resources</span>
-             </div>
-             <ul class="footer-cat-links">
-                 <li><a href="index.html#articles"><span>Gallery</span></a></li>
-                 <li><a href=""><span>Magazine Draft</span></a></li>
-                 <li><a href=""><span>Math problems</span></a></li>
-                 <li><a href=""><span>Mock tests</span></a></li>
-                 <li><a href=""><span>Club activities</span></a></li>
-             </ul>
-         </div>
-         <div class="col-3">
-             <div class="link-cat" onclick="footerToggle(this)">
-                 <span class="footer-toggle"></span>
-                 <span class="footer-cat">Quick Links</span>
-             </div>
-             <ul class="footer-cat-links">
-                 <li><a href="#home"><span>Home</span></a></li>
-                 <li><a href="#events"><span>Events</span></a></li>
-                 <li><a href="#index.html#articles"><span>Articles</span></a></li>
-                 <li><a href="#contact"><span>Contact</span></a></li>
-             </ul>
-         </div>
-         <div class="col-3" id="newsletter">
-             <span>Stay Connected</span>
-             <form id="subscribe">
-                 <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
-                 <input type="submit" value="Subscribe" id="btn-scribe"/>
-             </form>
-             
-             <div class="social-links social-2">
-                 <a href="https://www.facebook.com/2015JMC/photos"><i class="fab fa-facebook-f"></i></a>
-                 <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
-             </div>
-
-             <div id="address">
-                 <span>Club Location</span>
-                 <ul>
-                     <li>
-                         <i class="far fa-building"></i>
-                         <div>97 Asad Avenue<br/>
-                         Mohammadpur, Dhaka-1207</div>
-                     </li>
-                   
-                 </ul>
-             </div>
-             
-         </div>
-         <div class="social-links social-1 col-6">
-             <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-facebook-f"></i></a>
-             <a href="https://www.instagram.com/jmc_._official/"><i class="fab fa-instagram"></i></a>
-         </div>
-    </div>
-    <div id="copyright">
-        &copy; All Rights Reserved 2024
-    </div>
-    <div id="owner">
-        <span>
-            Designed by JMC
-        </span>
-    </div>
- </footer>
-     <style>
-        * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    
-    }
-     body{
-      background-color:hsla(240,3%,7%,1);
-    background-image:
-    radial-gradient(at 0% 0%, hsla(224,54%,12%,1) 0px, transparent 50%),
-    radial-gradient(at 32% 99%, hsla(236,8%,1%,1) 0px, transparent 50%),
-    radial-gradient(at 92% 0%, hsla(7,0%,0%,1) 0px, transparent 50%);/**/
-        color: #fff;
-        transition: padding-top 0.3s ease; /* Add transition to smooth out content movement */
-    }
-    .submit-btn {
-                 
-        background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
-        text-align: center;
-    
-        transition: 0.5s;
-        background-size: 200% auto;
-        color: white;            
-        display: block;
-        padding: 10px 15px;
-        border-radius: 10px;
-        cursor: pointer;
-        border: none;
-        width: 50%;
-        margin: 0 auto; /* Center the button */
-    }
-    .submit-btn:hover {
-        background-position: right center;
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    html{
-      overflow-x: hidden;
-    }
-    /* Body styles */
-    body {
-        font-family: 'Abel', sans-serif;
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-    }
-    html {
-        scroll-behavior: smooth;
-    }
-    
-    
-        .login-box {
-    width: 70%;
-    margin: 20vh auto 0; /* Adjusted margin-top to vertically center the form */
-    padding: 40px;
-    background-color: rgba(25, 25, 28, 0.78);
-    border-radius: 12px;
-    border: 1px solid rgba(37, 170, 225, 1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-    .login-box {
-        width: 90%; /* Adjust width for smaller screens */
-    }
-}
-    
-        .login-box:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-    
-        .login-box h2 {
-            margin-bottom: 20px;
-            display: inline-block; /* Center without flexbox */
-            color: white;
-        }
-    
-        /* Input box styles */
-        .input-box {
-            position: relative;
-            margin-bottom: 30px;
-            text-align: left; /* Reset text alignment */
-        }
-    
-        .input-box input {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            color: white;
-            transition: border-bottom 0.3s ease;
-            outline: none;
-            font-size: 16px;
-            background-color: rgb(25 25 28 / 78%);
-            border-radius: 12px;
-        }
-    
-        .input-box input:focus {
-            border-bottom: 2px solid #007bff;
-        }
-    
-        .input-box label {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            transition: top 0.3s ease, font-size 0.3s ease;
-            pointer-events: none;
-            color: #999;
-            font-size: 16px;
-        }
-    
-        .input-box input:focus~label, 
-        .input-box input:valid~label {
-            top: -12px;
-            font-size: 12px;
-            color: #007bff;
-        }
-        /*Nav*/
-        .navbar {
+      /*Nav*/
+      .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -296,7 +63,7 @@
     }
     
        .register-btn {
-        background-image: linear-gradient(to right, #25aae1, cyan);
+            background-image: linear-gradient(to right, #25aae1, cyan);
         box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);/* Initial background color */
         text-align: center;
         text-transform: uppercase;
@@ -341,7 +108,7 @@
     ::-webkit-scrollbar-thumb
     {
         background-image: linear-gradient(to right, #25aae1, cyan);
-              border-radius: 20px;
+        border-radius: 20px;
     }
     /* Add this CSS for responsive design */
     @media screen and (max-width: 768px) {
@@ -391,7 +158,6 @@
     .nav-links li {
         margin-right: 20px;
         padding-right: 34px;
-
     }
     
     .nav-links li a {
@@ -433,7 +199,7 @@
     font-family: 'Abel', sans-serif;
      font-weight: 400;
         font-size: 35px;
-        color: #656565;
+        color: #00cdac;
     }
     
     .dummy-text {
@@ -448,12 +214,7 @@
         display: inline-table;
     }
     
-    .col-6 {
-    width:50%;
-    display: inline-table;
-}
-
-footer {
+    footer {
     backdrop-filter: blur(23px) saturate(209%);
     -webkit-backdrop-filter: blur(23px) saturate(209%);
     background-color: rgb(25 25 28 / 78%);
@@ -461,18 +222,17 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.125);
 
     padding: 20px;
-    margin-top: 37vh;/*putting the shithead down*/
+    margin-top: 32vh; /* Push the footer to the bottom */
     text-align: center;
     justify-content: space-between;
     align-items: center;
 }
-
 .footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+    
         footer .logo {
             color:#fff;
             font-size: 28px;
@@ -841,12 +601,12 @@ footer {
         .nav-links {
                 display: none; /* Hide nav links by default */
             position: absolute;
-            top: 70px;
+            top: 71px;
             right: 0;
-          /*  left: 0; /* Center nav links horizontally */
+            /*left: 0; /* Center nav links horizontally */
             background-color: rgba(84, 84, 86, 0.5);
             backdrop-filter: blur(10px);
-            border-radius: 10px;
+            border-radius: 3px;
         }
     
         .nav-active {
@@ -859,7 +619,6 @@ footer {
         .nav-active li {
             margin: 20px 0;
             padding: 0;
-
         }
     
         .burger-menu {
@@ -869,150 +628,13 @@ footer {
             right: 20px; /* Adjust right spacing */
         }
     }
-    
-    /*extra footer legacy code*/
 
-.social-icons {
-    list-style: none;
-    margin-right: 20px;
+:root {
+    --primary-color: #02AAB0; /* Primary color */
+    --secondary-color: #F7B801; /* Secondary color */
+    --accent-color: #FDDE6B; /* Accent color */
+    --text-color: #333333; /* Text color */
+    --background-color: #FFFFFF; /* Background color */
+    --glass-color: rgba(255, 255, 255, 0.3); /* Glassmorphism color */
+    --border-color: #D3D3D3; /* Border color */
 }
-
-.social-icons li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.social-icons a {
-    color: #ffffff;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social-icons a:hover {
-    color: #1dd1a1; /* Neon teal on hover */
-}
-.fab{
-    color: cyan;
-}
-
-    /**/
-    </style>
-    <script>
-        //navbar
-        
-document.addEventListener("DOMContentLoaded", function() {
-  const buttons = document.querySelectorAll(".btn");
-  const sections = document.querySelectorAll(".section");
-
-  buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
-      const targetSectionClass = button.textContent.toLowerCase();
-      const targetSection = document.querySelector("." + targetSectionClass);
-      
-      buttons.forEach(function(btn) {
-        btn.classList.remove("active");
-      });
-      
-      sections.forEach(function(section) {
-        section.classList.remove("active");
-      });
-      
-      button.classList.add("active");
-      targetSection.classList.add("active");
-    });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const burgerMenu = document.querySelector('.burger-menu');
-    const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-links li');
-    const navbar = document.querySelector('nav');
-
-    burgerMenu.addEventListener('click', function() {
-        if (navLinks.classList.contains('nav-active')) {
-            anime({
-                targets: '.nav-links',
-                right: '-300px',
-                duration: 700,
-                easing: 'easeInOutQuint',
-                complete: function() {
-                    navLinks.classList.remove('nav-active');
-                }
-            });
-        } else {
-            anime({
-                targets: '.nav-links',
-                right: '0',
-                duration: 700,
-                easing: 'easeInOutQuint'
-            });
-            navLinks.classList.add('nav-active');
-        }
-    });
-
-    // Close navbar menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!navLinks.contains(event.target) && !burgerMenu.contains(event.target)) {
-            anime({
-                targets: '.nav-links',
-                right: '-300px',
-                duration: 700,
-                easing: 'easeInOutQuint',
-                complete: function() {
-                    navLinks.classList.remove('nav-active');
-                }
-            });
-        }
-    });
-
-    // Close navbar menu when clicking on a nav item
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            anime({
-                targets: '.nav-links',
-                right: '-300px',
-                duration: 700,
-                easing: 'easeInOutQuint',
-                complete: function() {
-                    navLinks.classList.remove('nav-active');
-                }
-            });
-        });
-    });
-
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-            // Scroll down
-            navbar.style.top = `-${navbar.offsetHeight}px`; // Hide navbar by moving it above the viewport
-        } else {
-            // Scroll up
-            navbar.style.top = 0; // Show navbar by moving it back to the top
-        }
-
-        lastScrollTop = scrollTop;
-    });
-});
-
-    </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="anime.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
- <script src="jmm-login.js"></script>
-<script>
-            function footerToggle(footerBtn) {
-    $(footerBtn).toggleClass("btnActive");
-    $(footerBtn).next().toggleClass("active");
-}
-</script>
- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
- <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
- </body>
-</html>

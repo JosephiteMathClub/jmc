@@ -319,7 +319,7 @@ function openPopupOne() {
 
 function openPopupTwo() {
     if (!popupVisibleOne && !popupVisibleTwo) { // Check if neither popup is already visible
-        const popup = createPopup('JMM Intra', () => {
+        const popup = createPopup('JMF Intra', () => {
             popupVisibleTwo = false; // Update popup visibility flag for second popup
         });
         document.body.appendChild(popup);

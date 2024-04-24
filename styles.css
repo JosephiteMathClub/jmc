@@ -78,8 +78,8 @@ footer section {
 
 ::-webkit-scrollbar-thumb
 {
-        background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
-  border-radius: 20px;
+    background-image: linear-gradient(to right, #25aae1, cyan);
+      border-radius: 20px;
 }
 
 h1 {
@@ -217,7 +217,7 @@ footer {
         border: 1px solid #cecece;
         border-radius: 0px 4px 4px 0;
         padding: 8px 5px;
-        background-color: #40e495;
+        background-color: cyan;
         color: #212121;
         cursor: pointer;
     }
@@ -1120,7 +1120,7 @@ background-position: right center; /* change the direction of the change here */
 
 /* Register button styles */
 .register-btn {
-        background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    background-image: linear-gradient(to right, #25aae1, cyan);
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);/* Initial background color */
     text-align: center;
     text-transform: uppercase;
@@ -1298,7 +1298,7 @@ footer {
     color: #1dd1a1; /* Neon teal on hover */
 }
 .fab{
-    color: #00CDAC;
+    color: cyan;
 }
 
 /*responsive navbar media query*/
@@ -1340,12 +1340,12 @@ footer {
 }
 
 
-  .popup-container {
+.popup-container {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(37, 170, 225, 0.9);
+    background-color: rgb(49 49 49 / 93%);
     border-radius: 20px;
     padding: 20px;
     max-width: 80%;
@@ -1353,7 +1353,10 @@ footer {
     overflow-y: auto;
     z-index: 1000;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
+    border: 1px solid rgb(37 170 225 / 90%);
+}
+
+
 
   .popup-title {
     text-align: center;
