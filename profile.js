@@ -98,21 +98,35 @@ function hideEvents(){
     if (doc.exists) {
 
  let classInt = doc.data().class
-if(classInt >= 11){
-console.log("HS")
-document.getElementById("5").style.display = "none"
-}
-if(classInt >= 9 && classInt<=10){
-  console.log("S")
-  document.getElementById("5").style.display = "none"
+//1:PP
+//2:CB
+//3:LD
+//4:CB
+//5:ER
+//6:MO
+//7:IQ
+//8:5
+//9:SK
+//10:HC
+if(classInt >= 9){
+  console.log("S, hsec")
+  document.getElementById("HC").style.display = "none"
 
 }
 if(classInt >= 3 && classInt<=5){
   console.log("Junior")
+  document.getElementById("5").style.display = "none"
+  document.getElementById("PP").style.display = "none"
+  document.getElementById("LD").style.display = "none"
+  document.getElementById("CB").style.display = "none"
 
 }
 if(classInt >= 6 && classInt<=7){
   console.log("Primary")
+  document.getElementById("5").style.display = "none"
+  document.getElementById("PP").style.display = "none"
+  document.getElementById("LD").style.display = "none"
+  document.getElementById("CB").style.display = "none"
 
 }
   }

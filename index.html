@@ -78,12 +78,14 @@
         <div class="about-card">
                 <h2>About Us</h2>
 
-<p class="about-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tempor ipsum. Duis id ante in urna congue vehicula.Hola soy tawhid, si beautifula and eureka.Si kan papi
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tempor ipsum. Duis id ante in urna congue vehicula.Hola soy tawhid, si beautifula and eureka.Si kan pap
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tempor ipsum. Duis id ante in urna congue vehicula.Hola soy tawhid, si beautifula and eureka.Si kan pap
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tempor ipsum. Duis id ante in urna congue vehicula.Hola soy tawhid, si beautifula and eureka.Si kan pap
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis tempor ipsum. Duis id ante in urna congue vehicula.Hola soy tawhid, si beautifula and eureka.Si kan pap
+<p class="about-content">
+    The Josephite Math Club, established in 2015 by students of St. Joseph Higher Secondary School, stands as a testament to the power of passion and collaboration in the pursuit of mathematical excellence. What began as a modest initiative among Josephites has flourished into a vibrant community, thanks to the unwavering support of dedicated teachers and the boundless enthusiasm of aspiring mathematicians.
+    
+    At the heart of our club lies the motto, "Let infinity be your limit." This guiding principle encapsulates our belief in the limitless potential of each member to explore, innovate, and push the boundaries of mathematical knowledge. With a spirit of curiosity and a thirst for discovery, we embark on a journey where there are no bounds to what we can achieve.
+    Over the years, the Josephite Math Club has evolved into a dynamic hub of intellectual exchange and camaraderie. Through engaging workshops, stimulating discussions, and exciting competitions, we foster an environment where mathematical ideas thrive and creativity knows no bounds. Our members are not just learners but also teachers, sharing their insights and inspiring one another to reach new heights.
 
+    As we continue to grow and evolve, we remain committed to our founding vision of nurturing a community where passion for mathematics reigns supreme. With every problem solved, every theorem proved, and every idea shared, we reaffirm our dedication to making the Josephite Math Club a beacon of excellence in mathematical exploration. Join us, and together, let us embrace the infinite possibilities that lie ahead.
+        
 </p>
 
         <a href="" class="read-more-btn">Read More</a>
@@ -95,6 +97,10 @@
 
 <section class="articles-section" id="articles">
     <h2 class="section-title">Articles</h2>  
+
+  <br>
+  
+
 </section>
 
 <br>
@@ -135,33 +141,59 @@
     <!-- Gallery Section -->      
       <h2 class="section-title" style="height: 30vh;">Gallery</h2>
 
-    <section id="gallery" style="padding-bottom: 64vh;" class="section glass-section">
+    <section id="gallery" style="padding-bottom: 64vh" class="section glass-section">
         <!-- Add content for the gallery section -->
-<main>
-  <ul class='slider'>
-    <li class='item' style="background-image: url('gallery/one.webp')">
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 6</div>
+              <img src="/gallery/one.webp" style="width:100%">
+              <div class="text">Caption Text</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 6</div>
+              <img src="/gallery/two.jpg" style="width:100%">
+              <div class="text">Caption Two</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 6</div>
+              <img src="/gallery/three.jpg" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 6</div>
+                <img src="/gallery/four.jpg" style="width:100%">
+                <div class="text">Caption Four</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">5 / 6</div>
+                <img src="/gallery/five.jpg" style="width:100%">
+                <div class="text">Caption Five</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">6 / 6</div>
+                <img src="/gallery/six.jpg" style="width:100%">
+                <div class="text">Caption Six</div>
+              </div>
     
-    </li>
-    <li class='item' style="background-image: url('gallery/two.jpg')">
-  
-    </li>
-    <li class='item' style="background-image: url('gallery/three.jpg')">
-     
-    </li>
-    <li class='item' style="background-image: url('gallery/four.jpg')">
-     </li>
-    <li class='item' style="background-image: url('gallery/five.jpg')">
-    </li>
-    <li class='item' style="background-image: url('gallery/six.jpg')">
-    </li>
-  </ul>
-  <nav class='nav'>
-    <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-    <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-  </nav>
-</main>
+            <!-- Next and previous buttons -->
+ 
+          </div>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
 
-
+        </div>
     </section>
     <br>
     <br>
@@ -430,6 +462,20 @@ header .overlay{
     </style>
 <script>
  document.getElementById("audio").autoplay;
+ let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 

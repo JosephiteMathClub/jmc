@@ -120,10 +120,60 @@ readMoreBtn.addEventListener('click', function () {
     });
 });
 
+
+function validateForm() {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const messageInput = document.getElementById("message");
+
+    // Regular expressions for email and phone number validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{11}$/;
+
+    // Validation flags
+    let isValid = true;
+    let errorMessage = "";
+
+    // Validate name
+    if (nameInput.value.trim() === "") {
+        isValid = false;
+        errorMessage += "Name is required.\n";
+    }
+
+    // Validate email
+    if (!emailRegex.test(emailInput.value.trim())) {
+        isValid = false;
+        errorMessage += "Invalid email address.\n";
+    }
+
+    // Validate phone number
+    if (!phoneRegex.test(phoneInput.value.trim())) {
+        isValid = false;
+        errorMessage += "Invalid phone number. (11 digits only)\n";
+    }
+
+    // Validate message
+    if (messageInput.value.trim() === "") {
+        isValid = false;
+        errorMessage += "Message is required.\n";
+    }
+
+    // Display error message if validation fails
+    if (!isValid) {
+        alert(errorMessage);
+    }
+
+    return isValid;
+}
+
+
+
+
 function startSpinner() {
     var spinner = document.getElementById('spinner');
     var submitBtn = document.querySelector('.submit-btn');
-
+if(validateForm()){
     // Hide submit button and show spinner
     submitBtn.style.display = 'none';
     spinner.style.display = 'block';
@@ -141,7 +191,14 @@ function startSpinner() {
         popup.style.display = 'block';
     }, 3000); // Adjust this time according to your loading process
    })
+
 }
+}
+
+
+
+
+
 
 const overlay = document.getElementById('overlay');
 const popup = document.getElementById('popup');
@@ -357,3 +414,6 @@ function createPopup(titleText, onClose) {
 
     return popup;
 }
+
+
+
