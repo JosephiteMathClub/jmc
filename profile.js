@@ -108,6 +108,7 @@ function hideEvents(){
 //8:5
 //9:SK
 //10:HC
+//11:CLB
 if(classInt >= 9){
   console.log("S, hsec")
   document.getElementById("HC").style.display = "none"
@@ -119,6 +120,7 @@ if(classInt >= 3 && classInt<=5){
   document.getElementById("PP").style.display = "none"
   document.getElementById("LD").style.display = "none"
   document.getElementById("CB").style.display = "none"
+  document.getElementById("CLB").style.display = "none"
 
 }
 if(classInt >= 6 && classInt<=7){
@@ -127,6 +129,7 @@ if(classInt >= 6 && classInt<=7){
   document.getElementById("PP").style.display = "none"
   document.getElementById("LD").style.display = "none"
   document.getElementById("CB").style.display = "none"
+  document.getElementById("CLB").style.display = "none"
 
 }
   }
