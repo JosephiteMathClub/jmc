@@ -23,6 +23,10 @@ var aboutCard = document.querySelector('.about-card');
 var readMoreBtn = aboutCard.querySelector('.read-more-btn');
 var aboutContent = aboutCard.querySelector('.about-content');
 
+
+
+
+
 readMoreBtn.addEventListener('click', function () {
     event.preventDefault(); // Prevent default behavior of anchor element
     // Toggle the 'open' class to expand/collapse the content
@@ -269,19 +273,29 @@ function activate(e) {
 }
 
 document.addEventListener('click',activate,false);
+
+
 // Function to update active section in navbar
+
+
+// Listen to the scroll event to update the navbar
+//window.addEventListener('scroll', updateNavbar);
+/*
 function updateNavbar() {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-links a');
 
-    // Initialize variables to keep track of the closest section
-    let closestSectionIndex = 0;
-    let closestDistance = Math.abs(window.scrollY - sections[0].offsetTop);
+    // Initialize variables to keep track of the section closest to the top of the viewport
+    let closestSectionIndex = -1;
+    let closestDistance = Infinity;
 
-    // Find the closest section to the top of the viewport
+    // Iterate over each section to determine the distance from the top of the viewport
     sections.forEach((section, index) => {
-        const distance = Math.abs(window.scrollY - section.offsetTop);
-        if (distance < closestDistance) {
+        const sectionRect = section.getBoundingClientRect();
+        const distance = Math.abs(sectionRect.top);
+
+        // Update closest section if this one is closer to the top of the viewport
+        if (sectionRect.top >= 0 && distance < closestDistance) {
             closestSectionIndex = index;
             closestDistance = distance;
         }
@@ -291,13 +305,18 @@ function updateNavbar() {
     navLinks.forEach((navLink) => navLink.classList.remove('active'));
 
     // Add active class to the corresponding nav link for the closest section
-    navLinks[closestSectionIndex].classList.add('active');
+    if (closestSectionIndex !== -1) {
+        navLinks[closestSectionIndex].classList.add('active');
+    }
 }
-
+*/
+// Initial call to set the active link based on the initial scroll position
+//updateNavbar();
+/////////////////////////////////////////////////////
 
 
 // Add event listener for scroll event
-window.addEventListener('scroll', updateNavbar);
+//window.addEventListener('scroll', updateNavbar);
 //touch disable function
 function disableTouch() {
     document.querySelector('body').style.pointerEvents = 'auto';

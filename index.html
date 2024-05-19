@@ -96,9 +96,56 @@
 
 <section class="articles-section" id="articles">
     <h2 class="section-title">Articles</h2>  
+    <div class="art-container">
 
-  <br>
-  
+        <!-- Full-width images with number and caption text -->
+        <div class="article fade">
+          <div class="numbertext">1 / 2</div>
+          <img src="articles/one.png" style="width:53%">
+        </div>
+      
+        <div class="article fade">
+          <div class="numbertext">2 / 2</div>
+          <img src="articles/one-2.png" style="width:53%">
+        </div>
+      
+    <!--    <div class="article fade">
+          <div class="numbertext">3 / 6</div>
+          <img src="articles/three.jpg" style="width:100%">
+          <div class="text">Speech</div>
+        </div>
+
+        <div class="article fade">
+            <div class="numbertext">4 / 6</div>
+            <img src="articles/four.jpg" style="width:100%">
+            <div class="text">Tribute to national anthem</div>
+          </div>
+
+          <div class="article fade">
+            <div class="numbertext">5 / 6</div>
+            <img src="articles/five.jpg" style="width:100%">
+            <div class="text">Reporting</div>
+          </div>
+
+          <div class="article fade">
+            <div class="numbertext">6 / 6</div>
+            <img src="articles/six.jpg" style="width:100%">
+            <div class="text">Mathematicians' Potraits</div>
+          </div>-->
+
+        <!-- 
+
+      </div>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentArticle(1)"></span>
+        <span class="dot" onclick="currentArticle(2)"></span>
+        <span class="dot" onclick="currentArticle(3)"></span>
+        <span class="dot" onclick="currentArticle(4)"></span>
+        <span class="dot" onclick="currentArticle(5)"></span>
+        <span class="dot" onclick="currentArticle(6)"></span>
+      --> 
+
+    </div>
 
 </section>
 
@@ -111,7 +158,7 @@
 <div class="event-container">
 <div class="glass-card">
     <div class="card-div">
-    <img src="https://placehold.co/490x200" alt="Photo" class="card-img">
+    <img src="/gallery/inter.jpeg" alt="Photo" class="card-img">
 </div>
     <div class="content">
         <h2>Math Mania</h2>
@@ -148,43 +195,43 @@
             <div class="mySlides fade">
               <div class="numbertext">1 / 6</div>
               <img src="gallery/one.webp" style="width:100%">
-              <div class="text">Caption Text</div>
+              <div class="text">Event Management</div>
             </div>
           
             <div class="mySlides fade">
               <div class="numbertext">2 / 6</div>
               <img src="gallery/two.jpg" style="width:100%">
-              <div class="text">Caption Two</div>
+              <div class="text">Award giving ceremony</div>
             </div>
           
             <div class="mySlides fade">
               <div class="numbertext">3 / 6</div>
               <img src="gallery/three.jpg" style="width:100%">
-              <div class="text">Caption Three</div>
+              <div class="text">Speech</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">4 / 6</div>
                 <img src="gallery/four.jpg" style="width:100%">
-                <div class="text">Caption Four</div>
+                <div class="text">Tribute to national anthem</div>
               </div>
 
               <div class="mySlides fade">
                 <div class="numbertext">5 / 6</div>
                 <img src="gallery/five.jpg" style="width:100%">
-                <div class="text">Caption Five</div>
+                <div class="text">Reporting</div>
               </div>
 
               <div class="mySlides fade">
                 <div class="numbertext">6 / 6</div>
                 <img src="gallery/six.jpg" style="width:100%">
-                <div class="text">Caption Six</div>
+                <div class="text">Mathematicians' Potraits</div>
               </div>
     
             <!-- Next and previous buttons -->
  
           </div>
-          <div style="text-align:center">
+       <!--   <div style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
@@ -193,6 +240,7 @@
             <span class="dot" onclick="currentSlide(6)"></span>
 
         </div>
+    -->
     </section>
     <br>
     <br>
@@ -462,8 +510,10 @@ header .overlay{
 <script>
  document.getElementById("audio").autoplay;
  let slideIndex = 0;
-showSlides();
+ let articleIndex = 0;
 
+ showSlides();
+showArticles()
 function showSlides() {
   let i;
   let slides = document.getElementsByClassName("mySlides");
@@ -475,6 +525,19 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
+
+function showArticles() {
+  let i;
+  let arts = document.getElementsByClassName("article");
+  for (i = 0; i < arts.length; i++) {
+    arts[i].style.display = "none";
+  }
+  articleIndex++;
+  if (articleIndex > arts.length) {articleIndex = 1}
+  arts[articleIndex-1].style.display = "block";
+  setTimeout(showArticles, 5000); // Change image every 2 seconds
+}
+
 </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
