@@ -12,6 +12,30 @@
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
 
+// newsletter
+    function subscribeToNewsletter(email) {
+        db.collection("newsletter_subscriptions").add({
+          email: email,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(() => {
+          console.log("Email successfully added!");
+        })
+        .catch((error) => {
+          console.error("Error adding email: ", error);
+        });
+      }
+
+      const form = document.getElementById('subscribe');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = document.getElementById('subscriber-email').value
+        subscribeToNewsletter(email);
+        alert("You've been subscribed to the newsletter!");
+        form.reset();
+      });
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.querySelector('.burger-menu');
     const navLinks = document.querySelector('.nav-links');

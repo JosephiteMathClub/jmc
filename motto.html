@@ -13,6 +13,16 @@
     <title>JMC Motto</title>
 </head>
 <body>
+    <div id="loading-screen">
+        <div class="loading-symbols">
+            <span>∫</span>
+            <span>√</span>
+            <span>π</span>
+            <span>Σ</span>
+            <span>∆</span>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="logo">
             <img src="jmc.svg" alt="JMC Logo">
@@ -149,7 +159,44 @@
                         </span>
                     </div>
                  </footer>
+<style>
+    /* Loading Screen Styles */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.966);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+.loading-symbols {
+  font-size: 40px;
+  color: #333;
+  font-family: 'Abel', sans-serif;
+  display: flex;
+  gap: 15px;
+}
+
+.loading-symbols span {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="anime.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -157,7 +204,14 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-                  
+       
+<script>
+    setTimeout(loadingS, 5000);
+
+function loadingS() {
+       document.getElementById("loading-screen").style.display = "none";
+   };
+</script>
 <script src="common.js"></script>
 </body>
 </html>

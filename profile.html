@@ -11,6 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="loading-screen">
+        <div class="loading-symbols">
+            <span>∫</span>
+            <span>√</span>
+            <span>π</span>
+            <span>Σ</span>
+            <span>∆</span>
+        </div>
+    </div>
+
+    
     <nav class="navbar">
         <div class="logo">
             <img src="jmc.svg" alt="JMC Logo">
@@ -158,7 +169,7 @@
                 displayUserInfo(user);
             } else {
                 // No user is signed in, redirect to index.html
- //               window.location.href = "index.html";
+               window.location.href = "index.html";
             }
         });
 
@@ -1021,6 +1032,14 @@ font-size: 22px;
     $(footerBtn).toggleClass("btnActive");
     $(footerBtn).next().toggleClass("active");
 }
+
+setTimeout(loadingS, 5000);
+
+ function loadingS() {
+        document.getElementById("loading-screen").style.display = "none";
+    };
+
+
         //navbar
         
 document.addEventListener("DOMContentLoaded", function() {
