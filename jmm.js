@@ -22,6 +22,7 @@ var firebaseConfig = {
   
     // Get form values
     const name = document.getElementById('name').value;
+    const ins = document.getElementById('ins').value;
     const classValue = document.getElementById('class').value;
     const roll = document.getElementById('roll').value;
     const section = document.getElementById('section').value;
@@ -29,7 +30,7 @@ var firebaseConfig = {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
   
-    if (!name || !roll || !section || !phone || !email || !password) {
+    if (!name || !roll || !section || !phone || !email || !password || !ins) {
       // Optionally, you can show an error message or provide feedback to the user
       alert('Please fill in all required fields.');
     } else {
@@ -42,6 +43,7 @@ var firebaseConfig = {
           // Add a new document with a generated ID to the "registrations" collection
           db.collection("intra").doc(user.uid).set({
             name: name,
+            institute: ins,
             class: classValue,
             roll: roll,
             section: section,
